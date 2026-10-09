@@ -16,11 +16,11 @@ Página única de divulgação das quatro obras de Educação Infantil inscritas
 ```
 index.html        marcação da página (menu, hero, quatro seções, rodapé)
 css/styles.css    estilos (tokens de cor por seção, transições, responsivo)
-js/main.js        animações de entrada (IntersectionObserver)
-assets/           capas, personagens, páginas de exemplo e logos
+js/main.js        animações de entrada, modal "Conheça a obra" e botão de copiar código PNLD
+assets/           capas, personagens, páginas de exemplo e logo (todos em WebP)
 ```
 
-O script de cópia do código PNLD e o modal "Conheça a obra" ficam inline no `index.html`.
+As imagens abaixo da dobra usam `loading="lazy"`.
 
 ## Prévia
 
@@ -38,3 +38,4 @@ Para validar sem abrir a pasta, gere um único arquivo com CSS, JS e imagens emb
 
 - Conteúdo digital do modal "Conheça a obra" (hoje: "Versão digital em breve.").
 - URLs reais das obras.
+- `og:image` e `og:url` (exigem URL absoluta; definir quando o domínio estiver publicado).
