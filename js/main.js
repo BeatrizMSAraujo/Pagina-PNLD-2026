@@ -37,3 +37,17 @@
     });
   });
 })();
+
+// Menu hambúrguer (mobile)
+(function(){
+  var btn = document.querySelector('.menu-toggle'), nav = document.getElementById('menu-obras');
+  if (!btn || !nav) return;
+  function set(open){
+    nav.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    btn.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+  }
+  btn.addEventListener('click', function(){ set(!nav.classList.contains('open')); });
+  nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ set(false); }); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') set(false); });
+})();

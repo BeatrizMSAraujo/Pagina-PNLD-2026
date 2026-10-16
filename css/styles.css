@@ -198,6 +198,12 @@
   .pnld-code { margin:14px 0 0; text-align:center; background:var(--accent-ink); color:#fff; border-radius:14px; padding:10px 12px; font-family:"Fredoka",sans-serif; }
   .pnld-code span { display:block; font-size:12px; letter-spacing:2px; text-transform:uppercase; opacity:.92; }
   .pnld-code strong { display:block; font-size:20px; letter-spacing:1px; }
+  .pnld-code.has-acervo { display:flex; align-items:center; justify-content:center; gap:12px; text-align:left; padding:10px 14px 10px 10px; }
+  .pnld-code .acervo { flex:none; font-style:normal; width:64px; height:64px; border-radius:50%; background:#ffd84d; color:var(--accent-ink); border:3px dashed var(--accent-ink); outline:3px solid #ffd84d; display:flex; flex-direction:column; align-items:center; justify-content:center; line-height:1; transform:rotate(-8deg); box-shadow:0 3px 0 rgba(0,0,0,.25); }
+  .pnld-code .acervo small { font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; }
+  .pnld-code .acervo b { font-size:30px; font-weight:700; margin-top:2px; }
+  .pnld-code .code-txt span { display:block; }
+  .pnld-code .code-txt strong { font-size:18px; }
   dialog.obra-modal { border:0; padding:0; border-radius:22px; width:min(680px, calc(100% - 32px)); max-height:calc(100% - 32px); overflow:auto; background:#fff; color:#1d2430; box-shadow:0 30px 80px rgba(0,0,0,.35); }
   dialog.obra-modal::backdrop { background:rgba(20,20,40,.6); }
   .om-head { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:14px 18px; background:var(--accent-ink); color:#fff; }
@@ -299,4 +305,18 @@
     #que-barulho-e-esse .acoes-final .cta, #que-barulho-e-esse .acoes-final .ler-mais { font-size:17px; padding:13px 18px; }
     #praticas-inovadoras .acoes.acoes-final { grid-template-columns:1fr; }
     #praticas-inovadoras .acoes-final .cta, #praticas-inovadoras .acoes-final .ler-mais { font-size:17px; padding:13px 18px; }
+  }
+
+  /* ---- Menu hambúrguer (mobile) ---- */
+  .menu-toggle { display:none; }
+  @media (max-width:760px) {
+    header.top .wrap { flex-wrap:wrap; }
+    .menu-toggle { display:flex; flex-direction:column; justify-content:center; gap:5px; width:44px; height:44px; padding:0 10px; box-sizing:border-box; border:0; border-radius:999px; background:rgba(255,255,255,.14); cursor:pointer; }
+    .menu-toggle span { display:block; height:3px; border-radius:2px; background:#fff; transition:transform .25s ease, opacity .2s ease; }
+    .menu-toggle[aria-expanded="true"] span:nth-child(1) { transform:translateY(8px) rotate(45deg); }
+    .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity:0; }
+    .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform:translateY(-8px) rotate(-45deg); }
+    nav.chips { display:none; flex-direction:column; width:100%; gap:8px; padding-top:4px; }
+    nav.chips.open { display:flex; }
+    nav.chips a { font-size:16px; padding:12px 16px; border-radius:999px; }
   }
